@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184DDDC820823A0A00E4048E /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184DDDC720823A0A00E4048E /* Food.swift */; };
+		184DDDCA20823BA400E4048E /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184DDDC920823BA400E4048E /* FoodTableViewCell.swift */; };
 		187DFAED207FA20400953B8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DFAEC207FA20400953B8F /* AppDelegate.swift */; };
 		187DFAEF207FA20400953B8F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DFAEE207FA20400953B8F /* ViewController.swift */; };
 		187DFAF2207FA20400953B8F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 187DFAF0207FA20400953B8F /* Main.storyboard */; };
@@ -15,6 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		184DDDC720823A0A00E4048E /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
+		184DDDC920823BA400E4048E /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		187DFAE9207FA20400953B8F /* TableViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		187DFAEC207FA20400953B8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		187DFAEE207FA20400953B8F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		184DDDC6208239F100E4048E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				184DDDC720823A0A00E4048E /* Food.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		187DFAE0207FA20400953B8F = {
 			isa = PBXGroup;
 			children = (
@@ -55,11 +67,13 @@
 			isa = PBXGroup;
 			children = (
 				187DFAEC207FA20400953B8F /* AppDelegate.swift */,
-				187DFAEE207FA20400953B8F /* ViewController.swift */,
-				187DFAF0207FA20400953B8F /* Main.storyboard */,
 				187DFAF3207FA20500953B8F /* Assets.xcassets */,
-				187DFAF5207FA20500953B8F /* LaunchScreen.storyboard */,
 				187DFAF8207FA20500953B8F /* Info.plist */,
+				187DFAF5207FA20500953B8F /* LaunchScreen.storyboard */,
+				187DFAF0207FA20400953B8F /* Main.storyboard */,
+				184DDDC6208239F100E4048E /* Models */,
+				187DFAEE207FA20400953B8F /* ViewController.swift */,
+				184DDDC920823BA400E4048E /* FoodTableViewCell.swift */,
 			);
 			path = TableViewExample;
 			sourceTree = "<group>";
@@ -136,6 +150,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				187DFAEF207FA20400953B8F /* ViewController.swift in Sources */,
+				184DDDCA20823BA400E4048E /* FoodTableViewCell.swift in Sources */,
+				184DDDC820823A0A00E4048E /* Food.swift in Sources */,
 				187DFAED207FA20400953B8F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
