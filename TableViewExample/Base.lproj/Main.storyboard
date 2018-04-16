@@ -97,7 +97,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="Y5Z-h8-hUw">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8xm-oq-2Aa"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8xm-oq-2Aa">
+                            <connections>
+                                <segue destination="shJ-no-iDR" kind="show" id="sLB-Ys-tvu"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="5dU-2k-I4e" id="0Hf-YZ-tVg"/>
@@ -106,6 +110,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1056.8" y="118.29085457271366"/>
+        </scene>
+        <!--New Food View Controller-->
+        <scene sceneID="0jB-VL-5je">
+            <objects>
+                <viewController id="shJ-no-iDR" customClass="NewFoodViewController" customModule="TableViewExample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UYU-Cl-wQA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MJJ-e4-0u2">
+                                <rect key="frame" x="10" y="74" width="355" height="314"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your food's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uW8-Ki-IN8">
+                                        <rect key="frame" x="92.5" y="0.0" width="170.5" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="4Rr-6y-s94">
+                                        <rect key="frame" x="67.5" y="50" width="220.5" height="220"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="4Rr-6y-s94" secondAttribute="height" multiplier="1:1" id="5tC-40-LgH"/>
+                                            <constraint firstAttribute="width" constant="220" id="9Uc-XX-jv1"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="☆☆☆☆☆" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="msj-Ek-H79">
+                                        <rect key="frame" x="126.5" y="290" width="102" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Knu-V8-iN1">
+                                <rect key="frame" x="162.5" y="408" width="50" height="35"/>
+                                <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Ul2-0H-zcV"/>
+                                    <constraint firstAttribute="width" constant="50" id="XOC-za-Pi8"/>
+                                </constraints>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="btnSave:" destination="shJ-no-iDR" eventType="touchUpInside" id="amz-k0-Gw3"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="MJJ-e4-0u2" firstAttribute="top" secondItem="dve-wM-i5k" secondAttribute="top" constant="10" id="Rc5-If-u2K"/>
+                            <constraint firstItem="Knu-V8-iN1" firstAttribute="centerX" secondItem="dve-wM-i5k" secondAttribute="centerX" id="XA6-eb-ad5"/>
+                            <constraint firstItem="Knu-V8-iN1" firstAttribute="top" secondItem="MJJ-e4-0u2" secondAttribute="bottom" constant="20" id="i9h-1C-jbp"/>
+                            <constraint firstItem="MJJ-e4-0u2" firstAttribute="leading" secondItem="dve-wM-i5k" secondAttribute="leading" constant="10" id="lW7-7s-hEw"/>
+                            <constraint firstItem="dve-wM-i5k" firstAttribute="trailing" secondItem="MJJ-e4-0u2" secondAttribute="trailing" constant="10" id="tvU-yf-w1g"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dve-wM-i5k"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageViewFood" destination="4Rr-6y-s94" id="OfK-z4-iXd"/>
+                        <outlet property="lblFoodName" destination="uW8-Ki-IN8" id="l5D-xZ-y7J"/>
+                        <outlet property="lblRating" destination="msj-Ek-H79" id="9ol-0b-qEc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yvm-b1-imU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813.5999999999999" y="117.39130434782609"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="SZl-Ac-98h">
@@ -126,4 +195,7 @@
             <point key="canvasLocation" x="255" y="118"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add-image" width="720" height="720"/>
+    </resources>
 </document>

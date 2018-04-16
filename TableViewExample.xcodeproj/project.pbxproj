@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		184688D92084E48900F80CB9 /* NewFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184688D82084E48900F80CB9 /* NewFoodViewController.swift */; };
+		184688DB2084EF4C00F80CB9 /* FoodData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184688DA2084EF4C00F80CB9 /* FoodData.swift */; };
 		184DDDC820823A0A00E4048E /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184DDDC720823A0A00E4048E /* Food.swift */; };
 		184DDDCA20823BA400E4048E /* FoodTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 184DDDC920823BA400E4048E /* FoodTableViewCell.swift */; };
 		187DFAED207FA20400953B8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187DFAEC207FA20400953B8F /* AppDelegate.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		184688D82084E48900F80CB9 /* NewFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFoodViewController.swift; sourceTree = "<group>"; };
+		184688DA2084EF4C00F80CB9 /* FoodData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodData.swift; sourceTree = "<group>"; };
 		184DDDC720823A0A00E4048E /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
 		184DDDC920823BA400E4048E /* FoodTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodTableViewCell.swift; sourceTree = "<group>"; };
 		187DFAE9207FA20400953B8F /* TableViewExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TableViewExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +47,7 @@
 			isa = PBXGroup;
 			children = (
 				184DDDC720823A0A00E4048E /* Food.swift */,
+				184688DA2084EF4C00F80CB9 /* FoodData.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -74,6 +79,7 @@
 				184DDDC6208239F100E4048E /* Models */,
 				187DFAEE207FA20400953B8F /* ViewController.swift */,
 				184DDDC920823BA400E4048E /* FoodTableViewCell.swift */,
+				184688D82084E48900F80CB9 /* NewFoodViewController.swift */,
 			);
 			path = TableViewExample;
 			sourceTree = "<group>";
@@ -151,6 +157,8 @@
 			files = (
 				187DFAEF207FA20400953B8F /* ViewController.swift in Sources */,
 				184DDDCA20823BA400E4048E /* FoodTableViewCell.swift in Sources */,
+				184688D92084E48900F80CB9 /* NewFoodViewController.swift in Sources */,
+				184688DB2084EF4C00F80CB9 /* FoodData.swift in Sources */,
 				184DDDC820823A0A00E4048E /* Food.swift in Sources */,
 				187DFAED207FA20400953B8F /* AppDelegate.swift in Sources */,
 			);

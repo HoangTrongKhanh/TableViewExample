@@ -10,15 +10,6 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
-    var foods = [
-        Food(imageName: "cream-tea", foodName: "Cream Tea", rating: 2, foodDescription: "This is a cup of cream tea"),
-        Food(imageName: "japanese-salad", foodName: "Japanese Salad", rating: 2, foodDescription: "Very delicious Japanese Salad"),
-        Food(imageName: "kimchi", foodName: "Korean Kimchi", rating: 3, foodDescription: "Traditional Korean Food"),
-        Food(imageName: "mushroom", foodName: "Fresh mushroom", rating: 4, foodDescription: "Fresh mushroom with vegetables"),
-        Food(imageName: "oysters", foodName: "Oysters", rating: 5, foodDescription: "Oysters with ice rock"),
-        Food(imageName: "salad-mushroom", foodName: "Multiple salad", rating: 1, foodDescription: "Salad mixed with mushroom"),
-        Food(imageName: "vegetable", foodName: "Vegetable", rating: 5, foodDescription: "Fresh vegetables")
-    ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +23,11 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FoodTableViewCell") as! FoodTableViewCell
         let food:Food = foods[indexPath.row]
-        cell.imageViewFood.image = UIImage(named: food.imageName!)
+        if(food.image != nil) {
+            cell.imageViewFood.image = food.image
+        } else {
+            cell.imageViewFood.image = UIImage(named: food.imageName!)
+        }
         cell.lblFoodName.text = food.foodName
         cell.lblRating.text = ""
         for _ in 1...(food.rating ?? 1) {
@@ -40,6 +35,58 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         cell.lblFoodDescription.text = food.foodDescription
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        let food = foods[indexPath.row]
+        let editAction = UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
+            self.updateAction(food: food, indexPath: indexPath)
+        }
+        let deleteAction = UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
+            self.deleteAction(food: food, indexPath: indexPath)
+        }
+        editAction.backgroundColor = .blue
+        deleteAction.backgroundColor = .red
+        return [deleteAction, editAction]
+    }
+    
+    private func updateAction(food: Food, indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Update", message: "Update a food", preferredStyle: .alert)
+        let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
+            guard let textField = alert.textFields?.first else {
+                return
+            }
+            if let textToEdit = textField.text {
+                if(textToEdit.count == 0) {
+                    return
+                }
+                food.foodName = textToEdit
+                self.tableView.reloadRows(at: [indexPath], with: .automatic)
+            } else {
+                return
+            }
+        }
+        let cancelAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        alert.addTextField()
+        guard let textField = alert.textFields?.first else {
+            return
+        }
+        textField.placeholder = "Change your food name"
+        alert.addAction(saveAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
+    }
+    
+    private func deleteAction(food: Food, indexPath: IndexPath) {
+        let alert = UIAlertController(title: "Delete", message: "Does you sure wanna delete this food?", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "Yes", style: .default) { (action) in
+            foods.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+        let cancelAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        alert.addAction(deleteAction)
+        alert.addAction(cancelAction)
+        present(alert, animated: true)
     }
 
 }
