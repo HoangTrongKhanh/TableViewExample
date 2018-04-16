@@ -66,7 +66,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 return
             }
         }
-        let cancelAction = UIAlertAction(title: "No", style: .default, handler: nil)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .default)
         alert.addTextField()
         guard let textField = alert.textFields?.first else {
             return

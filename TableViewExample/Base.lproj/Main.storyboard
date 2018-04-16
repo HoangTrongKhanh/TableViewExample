@@ -122,11 +122,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MJJ-e4-0u2">
                                 <rect key="frame" x="10" y="74" width="355" height="314"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your food's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uW8-Ki-IN8">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your food's name" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="uW8-Ki-IN8">
                                         <rect key="frame" x="92.5" y="0.0" width="170.5" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="shJ-no-iDR" id="gRK-Qs-WZH"/>
+                                        </connections>
                                     </textField>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="add-image" translatesAutoresizingMaskIntoConstraints="NO" id="4Rr-6y-s94">
                                         <rect key="frame" x="67.5" y="50" width="220.5" height="220"/>
@@ -168,8 +171,8 @@
                     </view>
                     <connections>
                         <outlet property="imageViewFood" destination="4Rr-6y-s94" id="OfK-z4-iXd"/>
-                        <outlet property="lblFoodName" destination="uW8-Ki-IN8" id="l5D-xZ-y7J"/>
                         <outlet property="lblRating" destination="msj-Ek-H79" id="9ol-0b-qEc"/>
+                        <outlet property="txtFoodName" destination="uW8-Ki-IN8" id="eCZ-cf-N7u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvm-b1-imU" userLabel="First Responder" sceneMemberID="firstResponder"/>
